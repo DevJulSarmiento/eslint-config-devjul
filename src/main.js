@@ -5,7 +5,6 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import stylistic from '@stylistic/eslint-plugin'
 import tailwind from 'eslint-plugin-tailwindcss'
-import markdown from '@eslint/markdown'
 import { NODE_RULES, REACT_RULES } from './rules.js'
 import { defineConfig } from 'eslint/config'
 
@@ -13,12 +12,6 @@ import { defineConfig } from 'eslint/config'
 export const base = defineConfig([
   jsdoc.configs['flat/recommended-error'],
   stylistic.configs.recommended,
-  {
-    files: ['**/*.md'],
-    plugins: { markdown },
-    language: 'markdown/gfm',
-    extends: ['markdown/recommended'],
-  },
   {
     name: 'javascript/recommended-rules',
     files: ['**/*.js'],
