@@ -1,2 +1,2 @@
 /** @type {import("eslint").Linter.Config[]} */
-export { node as default } from './src/main.js';
+export { react as default } from './src/main.js';

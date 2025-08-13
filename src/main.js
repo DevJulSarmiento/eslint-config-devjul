@@ -14,7 +14,7 @@ export const base = defineConfig([
   stylistic.configs.recommended,
   {
     name: 'javascript/recommended-rules',
-    files: ['**/*.js'],
+    files: ['**/*.{js,jsx}'],
     plugins: {
       js,
       jsdoc,
@@ -55,7 +55,7 @@ export const react = defineConfig([
   tailwind.configs['flat/recommended'],
   {
     name: 'react-tailwind/recommended-rules',
-    files: ['/*.{js,jsx}'],
+    files: ['**/*.{js,jsx}'],
     extends: [
       js.configs.recommended,
       reactHooks.configs['recommended-latest'],
