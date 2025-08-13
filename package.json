@@ -14,7 +14,7 @@
     "url": "git+https://github.com/DevJulSarmiento/eslint-config-devjul.git"
   },
   "license": "ISC",
-  "author": "\"Habid Manzur <hmanzur>",
+  "author": "Habid Manzur <hmanzur>",
   "type": "module",
   "main": "src/main.js",
   "scripts": {
