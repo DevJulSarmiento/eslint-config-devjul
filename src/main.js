@@ -1,7 +1,7 @@
 import jsdoc from 'eslint-plugin-jsdoc';
 import js from '@eslint/js';
 import globals from 'globals';
-import stylisticJs from '@stylistic/js';
+// import stylisticJs from '@stylistic/js';
 import tailwind from '@stylistic/tailwind';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
@@ -23,7 +23,7 @@ export const base = [
     plugins: {
       js,
       jsdoc,
-      '@stylistic/js': stylisticJs,
+      // '@stylistic/js': stylisticJs,
     },
     extends: ["js/recommended"],
     rules: {
