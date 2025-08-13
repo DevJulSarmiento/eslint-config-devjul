@@ -5,6 +5,7 @@ import stylisticJs from '@stylistic/js';
 import tailwind from '@stylistic/tailwind';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import markdown from "@eslint/markdown";
 import { NODE_RULES, REACT_RULES } from './rules';
 
 /** @type {import("eslint").Linter.Config[]} */
