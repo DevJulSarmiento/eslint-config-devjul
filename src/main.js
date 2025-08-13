@@ -38,7 +38,7 @@ export const ignores = [
 ]
 
 /** @type {import("eslint").Linter.Config[]} */
-export const js = [
+export const node = [
   ...base,
   ...ignores
 ]
