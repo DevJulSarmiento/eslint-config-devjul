@@ -11,6 +11,12 @@ import { NODE_RULES, REACT_RULES } from './rules';
 export const base = [
   jsdoc.configs['flat/recommended-error'],
   {
+    files: ["**/*.md"],
+    plugins: { markdown },
+    language: "markdown/gfm",
+    extends: ["markdown/recommended"]
+  },
+  {
     name: "javascript/recommended-rules",
     files: ["**/*.js"],
     plugins: {
