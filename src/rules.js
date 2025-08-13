@@ -1,8 +1,8 @@
-import js from '@eslint/js';
+import js from '@eslint/js'
 
 export const NODE_RULES = {
   ...js.configs.recommended.rules,
-  complexity: ['error', { max: 6, variant: 'modified' }],
+  'complexity': ['error', { max: 6, variant: 'modified' }],
   'no-unused-vars': [
     'error',
     {
@@ -14,9 +14,6 @@ export const NODE_RULES = {
     },
   ],
   'no-useless-catch': 'error',
-
-  // stylistic
-  '@stylistic/js/indent': ['error', 2],
 
   // JSDoc
   'jsdoc/check-alignment': 'warn',

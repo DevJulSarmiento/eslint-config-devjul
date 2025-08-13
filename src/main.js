@@ -1,66 +1,67 @@
-import jsdoc from 'eslint-plugin-jsdoc';
-import js from '@eslint/js';
-import globals from 'globals';
-// import stylisticJs from '@stylistic/js';
-import tailwind from '@stylistic/tailwind';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
-import markdown from "@eslint/markdown";
-import { NODE_RULES, REACT_RULES } from './rules';
+import jsdoc from 'eslint-plugin-jsdoc'
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import stylistic from '@stylistic/eslint-plugin'
+import tailwind from 'eslint-plugin-tailwindcss'
+import markdown from '@eslint/markdown'
+import { NODE_RULES, REACT_RULES } from './rules.js'
+import { defineConfig } from 'eslint/config'
 
 /** @type {import("eslint").Linter.Config[]} */
-export const base = [
+export const base = defineConfig([
   jsdoc.configs['flat/recommended-error'],
+  stylistic.configs.recommended,
   {
-    files: ["**/*.md"],
+    files: ['**/*.md'],
     plugins: { markdown },
-    language: "markdown/gfm",
-    extends: ["markdown/recommended"]
+    language: 'markdown/gfm',
+    extends: ['markdown/recommended'],
   },
   {
-    name: "javascript/recommended-rules",
-    files: ["**/*.js"],
+    name: 'javascript/recommended-rules',
+    files: ['**/*.js'],
     plugins: {
       js,
       jsdoc,
-      // '@stylistic/js': stylisticJs,
     },
-    extends: ["js/recommended"],
+    extends: ['js/recommended'],
     rules: {
-      "max-params": ["error", 4],
-      "new-cap": ["error", { "capIsNew": false }],
-      ...NODE_RULES
-    }
+      'max-params': ['error', 4],
+      'new-cap': ['error', { capIsNew: false }],
+      ...NODE_RULES,
+    },
   },
-]
+])
 
 /** @type {import("eslint").Linter.Config[]} */
 export const ignores = [
   {
     ignores: [
-      "*.config.*",
-      "**/*.d.ts",
-      "**/*.min.js",
-      "build/**",
-      "coverage/**",
-      "dist/**",
-      "html/**",
-    ]
-  }
+      '*.config.*',
+      '**/*.d.ts',
+      '**/*.min.js',
+      'build/**',
+      'coverage/**',
+      'dist/**',
+      'html/**',
+    ],
+  },
 ]
 
 /** @type {import("eslint").Linter.Config[]} */
-export const node = [
+export const node = defineConfig([
   ...base,
-  ...ignores
-]
+  ...ignores,
+])
 
 /** @type {import("eslint").Linter.Config[]} */
-export const react = [
+export const react = defineConfig([
   ...base,
-  tailwind.configs["flat/recommended"],
+  tailwind.configs['flat/recommended'],
   {
-    name: "react-tailwind/recommended-rules",
+    name: 'react-tailwind/recommended-rules',
     files: ['/*.{js,jsx}'],
     extends: [
       js.configs.recommended,
@@ -78,5 +79,5 @@ export const react = [
     },
     rules: REACT_RULES,
   },
-  ...ignores
-]
+  ...ignores,
+])
