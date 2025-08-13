@@ -18,7 +18,8 @@
   "type": "module",
   "main": "src/main.js",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@eslint/css": "^0.10.0",

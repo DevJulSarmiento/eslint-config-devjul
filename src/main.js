@@ -1,5 +1,10 @@
 import jsdoc from 'eslint-plugin-jsdoc';
 import js from '@eslint/js';
+import globals from 'globals';
+import stylisticJs from '@stylistic/js';
+import tailwind from '@stylistic/tailwind';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
 import { NODE_RULES, REACT_RULES } from './rules';
 
 /** @type {import("eslint").Linter.Config[]} */
